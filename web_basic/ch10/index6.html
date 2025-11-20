@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+     <style>
+        
+        .button-main {
+            display: flex;
+            justify-content: center;
+
+
+            /* not을 연결하는 영역 */
+            & > .btn:not(& > btn:nth-of-type(1)) {
+                margin-left: -1px;
+            }
+
+            & > .btn:not(& > btn:nth-of-type(1)):not(& > .btn:not(& > btn:nth-last-of-type(1))) {
+                border-radius: 0;    
+            }
+
+            & > .btn:nth-of-type(1) {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            & > .btn:nth-last-of-type(1) {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+        }
+
+
+
+
+
+        /* 
+        body > div button:not(body > div > div:nth-of-type(1) > button:nth-of-type(2)):nth-of-type(2) {
+            background-color: red;
+        }
+             */
+
+        /* body > div button:not(body > div > div:nth-of-type(1) >
+        
+            button:nth-of-type(3)
+            
+            ) */
+
+
+            
+        .btn {
+            /* box-sizing: border-box; */
+            position: relative;
+            display: inline-block;
+            background-color: #3be6dd;
+            padding: 5px 15px;
+            border:  1px solid #dbdbdb;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: 600;
+            border-radius: 7px;
+        }    
+
+        .btn:hover {
+            border: 1px solid #1976d2;
+            background-color: #dbdbdb;
+            color: #f3693f;
+        }
+
+
+        
+        /* .btn-first {
+            box-sizing: border-box;
+            background-color: #f3693f;
+            padding: 10px 20px;
+            border:  1px solid #dbdbdb;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        .btn-second {
+            box-sizing: border-box;
+            background-color: #3be6dd;
+            padding: 10px 20px;
+            border:  1px solid #dbdbdb;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 10px;
+        }
+        
+        .btn-third {
+            box-sizing: border-box;
+            background-color: #3be6dd;
+            padding: 10px 20px;
+            border:  1px solid #dbdbdb;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+
+        .btn-fourth {
+            box-sizing: border-box;
+            background-color: #3be6dd;
+            padding: 10px 20px;
+            border:  1px solid #dbdbdb;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        .btn-fifth {
+            box-sizing: border-box;
+            background-color: #3be6dd;
+            padding: 10px 20px;
+            border:  1px solid #dbdbdb;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        .btn-sixth {
+            box-sizing: border-box;
+            background-color: #f3693f;
+            padding: 10px 20px;
+            border:  1px solid #dbdbdb;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 10px;
+        } */
+
+    </style>
+
+</head>
+
+<body>
+    <div class="button-main">
+        <!-- <button class="btn-first">1</button>
+        <button class="btn-second">2</button>
+        <button class="btn-third">3</button>
+        <button class="btn-fourth">4</button>
+        <button class="btn-fifth">5</button>
+        <button class="btn-sixth">6</button> -->
+
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+
+
+    </div>
+
+    <!-- 문제 : button을 사용하여 도형 이어붙이기, 가운데의 선은 지우도록 해야 -->
+
+</body>
+</html>
