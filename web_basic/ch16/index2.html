@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 문제
+        // 일반 for문을 사용하여 100, 200, 300, 400이 들어가도록
+
+        const nums = [10, 20, 30, 40];
+        let newNums = [];
+
+
+        // 치명적 오류!
+        // for (let i = 0; i < nums.length; i++) {
+        //     console.log(nums[i] * 10);
+        // }
+
+        for (let i = 0; i < nums.length; i++) {
+            // newNums.push(nums[i] * 10);
+            newNums = [...newNums, nums[i] * 10];
+        }
+        console.log(newNums);
+
+        // 스트림의 맵 사용
+        let newNums2 = nums.map(n => n * 10);
+        console.log(newNums2);
+
+
+        function map(arr, fx) {
+            const result = [];
+            for (let n of arr) {
+                result.push(fx(n));
+            }
+            return result;
+        }
+
+        const fx2 = (n) => n * 10;
+        const fx3 = (n) => {
+            return n * 10;
+        }
+
+        let newNums3 = map(nums, fx2);
+        console.log(newNums3);
+
+        console.log(map(nums, fx2));
+
+
+        // 필터
+        let newNums4= nums.filter(n => n % 3 !== 0);
+        console.log(newNums4);
+
+
+        // n은 쓰지 않아도 써주기 매개변수라는 것을 자리잡도록 하기 위해
+        let newNums5 = nums.filter((n, index) => index !== 1);
+        console.log(newNums5);
+
+        // 필터 알고리즘
+        function filter(arr, fx) {
+            const result = [];
+            for (let i = 0; i < arr.length; i++) {
+                const n = arr[i];
+                if (fx(n, i)) {
+                    result.push(n);
+                }
+            }
+            return result;
+        }
+
+        console.log (filter(nums, (n, index) => index !== 1));
+
+
+    </script>
+</body>
+</html>
