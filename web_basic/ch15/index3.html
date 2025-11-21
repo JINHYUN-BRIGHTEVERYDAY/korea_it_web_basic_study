@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const username = "test";
+        const password = "1111";
+
+        // user 객체
+        const user = {
+            username: "test1",
+            password: "1234",
+        }
+
+        // error 객체
+        const error = {
+            fieldName: "password",
+            errorMessage: "사용자이름을 입력하세요",
+        }
+
+        console.log(error.errorMessage + `(${user[error.fieldName]})`);
+
+        const student = {
+            name: "김준일",
+            age: 32,
+        }
+
+        console.log(student.name);
+        console.log(student.age);
+        console.log(student["name"]);
+        console.log(student["age"]);
+
+        // 복수형태로 나와있으면 거의 배열
+        // console.log(students[0]);
+        // console.log(students[1]);
+
+        
+
+    </script>
+</body>
+</html>

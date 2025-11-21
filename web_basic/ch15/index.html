@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User {
+            username = "test";
+            password = "1234";
+        }
+
+
+        let user = new User();
+        console.log(user);
+        user.username = "test2";
+        console.log(user);
+        // private 없어서 setter 쓸 필요 없음
+
+        // class User {
+        //     username;
+        //     password;
+        // }
+        // 함수는 재정의할 수 있지만 클래스는 재정의하여 덮어쓰지 않는다
+
+        class User2 {
+            username;
+            password;
+            setPassword;
+
+            // 생성자 -> constructor
+            constructor(username, password, setPassword) {
+                this.username = username;
+                this.password = password;
+                this.password = setPassword; // 콜백함수 받아오기
+            }
+
+            setUsername(username) { // function 생략하고 쓰기
+                this.username = username;
+            }
+
+        }
+
+        let user2 = new User2("test3", "1111", (password) => {user2.password = password}); 
+        console.log(user2);
+        user2.setUsername("test4");
+        console.log(user2);
+        user2.setPassword("3333"); // 에러 
+        console.log(user2);
+
+
+
+        // 일반 function과 차이점
+        const user3 = {
+            username: "test1",
+            passowrd: "1234",
+
+            // function은 자기 자신을 참조 가능
+            setUsername: function (username) { user3.username = username}, 
+            // 한 줄 명령 줄괄호 생략 가능
+            // setPassword: (password) => {this.password = password}
+            setPassword: (password) => {user3.password = password},
+        }
+
+        console.log(user3);
+
+        user3.setUsername("test2");
+        console.log(user3);
+    </script>
+</body>
+</html>

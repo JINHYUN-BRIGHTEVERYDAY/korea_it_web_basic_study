@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 호이스팅
+
+        // 변수 선언과 정의가 먼저 
+
+        a = 10;
+        b = 20;
+
+        console.log(a);
+        console.log(b);
+
+        var a;
+
+
+        // --------------------------
+
+        print();
+
+
+        var a; // 변수선언이 두 번 이상 가능 -> 자바스크립트의 오류
+        // 상수를 사용할 경우 주석으로 표기했었어야
+
+
+        let b;
+
+        // 변수는 let으로 표기, 변수는 선언과 초기화를 독립시행적으로 하면 안된다, 호이스팅 안된다
+        // 상수는 const로 표기, 상수는 선언과 초기화를 독립시행적으로 하면 안된다, 호이스팅 안된다
+        // const c;
+        // c = 10; 
+
+        const c = 10;
+
+
+        function print() {
+            console.log("출력!");
+        }
+
+        
+    </script>
+</body>
+</html>
