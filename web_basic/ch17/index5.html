@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // resolve 안의 값들을 배열로 가져오기
+        Promise.all([
+            new Promise(rs => rs(10)),
+            new Promise(rs => rs(20)),
+            new Promise(rs => rs(30)),
+            new Promise(rs => rs(40)),
+        ]).then(values => {
+            console.log(values);
+        });
+        
+
+        // Promise.all -> 이미지 업로드때 많이 사용
+        Promise.all([
+            new Promise(rs => {
+                console.log(1);
+                rj(100);
+            }),
+            new Promise((rs, rj) => {
+                console.log(2);
+                setTimeout(() => rj(200), 3000);
+                // rs(200);
+            }),
+            new Promise(rs => {
+                console.log(3);
+                rs(300);
+            }),
+        ]).then(values => {
+            console.log(values);
+            // values -> 배열, 결과값을 배열로 만들기 위해
+            // [100, 200, 300] 순서 보장
+        }).catch(error => {
+            console.log(error);
+        });
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 구조분해 (비구조 할당) - 객체
+        const user = {
+            username: "test",
+            password: "1234",
+        }
+
+        // 본래는 꺼내기 위해서 참조 형식으로 꺼냈어야 했음
+        const username = user.username;
+        const password = user.password;
+
+        const student = {
+            studentName: "김준일",
+            studentAge: 32,
+            studentAddress: "동래구",
+        }
+
+
+
+        // 구조분해의 형식
+        // 분해가 되어서 들어가게 됨
+        const { studentName, studentAge } = student; 
+        // 짝이 맞지 않고 순서가 맞지 않을지라도 내가 원하는 것 추출 할 수 있음
+
+        function print1(student) {
+            const studentName = student.studentName;
+            const studentAge = student.studentAge;
+
+
+            console.log(studentName);
+            console.log(studentAge);
+
+            // console.log(student.studentName);
+            // console.log(student.studentAge);
+        }
+
+        print1(student);
+
+
+
+
+
+        function print2(studentName, studentAge){
+            console.log(studentName);
+            console.log(studentAge);
+        }
+        
+        print2(student.studentName, student.studentAge);
+
+
+
+        // 구조분해된 형태의 함수로 출력
+        function print3({ studentName, studentAge }) {
+            console.log(studentName);
+            console.log(studentAge);
+        }
+
+        print3(student);
+
+
+        // 다시 구조분해를 할 수 없다 
+        // 지역변수로 위에서 사용하고 있음
+        // const { studentName, studentAge } = student; 에러 발생
+        const { studentName:name, studentAge:age } = student;
+        console.log(name, age);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 없다라는 의미 내재되어 있음
+        const a = 0;
+        const b = 0.0;
+        const c = "";
+        const d = null;
+        const e = undefined;
+        const f = NaN;
+        const g = false;
+        
+        // 객체 Object 
+        const h = {};
+
+        // 비어있는 배열
+        const i = [];
+
+
+        // 결과가 true-false 일반 값들을 논리연산에 쓰는 방법
+        // !! (false)
+        console.log(!!a);
+        console.log(!!b);
+        console.log(!!c);
+        console.log(!!d);
+        console.log(!!e);
+        console.log(!!f);
+        console.log(!!g);
+        console.log(!!h);
+        console.log(!!i);
+
+        console.log("=================");
+
+        // ! (true)
+        console.log(!a);
+        console.log(!b);
+        console.log(!c);
+        console.log(!d);
+        console.log(!e);
+        console.log(!f);
+        console.log(!g);
+
+        //! 이지만 false로 출력
+        console.log(!h);
+        console.log(!i);
+
+
+        // 객체 구성 -> keys : 배열 의미
+        // length : 배열 길이
+        console.log(Object.keys(h).length);
+
+
+        // user 배열을 상수로
+        const user = {
+            username: "test",
+            password: "1234",
+        }
+
+
+        // 객체의 key와 value, entry를 배열 형태로 출력하기
+        console.log(Object.keys(user));
+        console.log(Object.values(user));
+        console.log(Object.entries(user));
+
+        // entry 값들 추출하기
+        console.log(Object.entries(user)[0][0]);
+        console.log(Object.entries(user)[0][1]);
+        console.log(Object.entries(user)[1][0]);
+        console.log(Object.entries(user)[1][1]);
+
+    </script>
+</body>
+</html>

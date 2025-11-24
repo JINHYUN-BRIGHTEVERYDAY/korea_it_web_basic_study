@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user = {
+            username : "test",
+            password : "1234",
+            role: {
+                roleName: "ROLE_USER",
+                roleNameKor:"사용자권한",
+            }
+        }
+
+        // 구조분해
+        // user와 role에 알맞게
+        // 변수명 바꿀 수 있지만 콜론으로 표기해야
+        const { username , role } = user;
+        const { roleName } = role;
+        // const { username, {roleName} = role } = user;
+        const { roleNameKor } = user.role;
+        
+        const newUser = {
+            username: "test2",
+            password: "1111",
+            role: {
+                ...user.role,
+            }
+        }
+
+        console.log(username, role, roleName, roleNameKor);
+        console.log(newUser);
+
+
+    </script>
+</body>
+</html>

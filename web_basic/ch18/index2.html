@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 자바스크립트에서 or 연산 : 첫 번째 값이 true이면 첫 번째 값을 반환
+        // 그러나 첫 번째 값이 true가 아니며 두번째 값이 true이면 두 번째 값을 반환
+
+        // 먼저 true가 나오면 앞의 값으로 결정
+        console.log(1 || 2);
+        console.log(11 || 21);
+        console.log(0 || 21);
+
+        // 자바스크립트에서 and 연산 : 앞의 값이 false -> false
+        console.log(null && 21);
+        console.log(11 && 21);
+
+        // 먼저 true가 나오면 두 번째 값을 검사하여 true가 되면 두 번째 값을 출력
+        console.log(0 || 31 || 0);
+        console.log(11 && 21 && 31);
+
+        const a = 1;
+
+        console.log((a % 2 === 0 && "짝수" ) || "홀수") // true
+        
+        
+        
+        // 없으면 뒤의 값으로 대체하라 -> null에만 사용가능
+        const b = null;
+        console.log(b ?? "test");
+
+
+        const c = {};
+        console.log(c ?? "test");
+
+    </script>
+</body>
+</html>
