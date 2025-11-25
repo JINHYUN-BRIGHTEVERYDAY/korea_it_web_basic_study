@@ -7,16 +7,30 @@
 </head>
 <body>
     <script>
+        /*
+        동기처리함수와 비동기처리함수
+        
+        비동기처리 함수 : setTimeout, fetch, addEventListener
+        */
+
         // 비동기처리
         setTimeout(()=> {
             //콜백함수
             console.log(5);
         }, 2000); //시간지연
         
+
+        // 동기처리
         console.log(1);
         console.log(2);
         console.log(3);
         console.log(4);
+
+        /*
+
+        콜백 함수가 지나치게 늘어나면 콜백 지옥 발생
+        
+        */
     </script>
 </body>
 </html>

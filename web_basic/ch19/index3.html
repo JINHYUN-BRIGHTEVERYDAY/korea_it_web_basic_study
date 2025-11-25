@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+
+    <script>
+        let inputValues = {
+            username: "",
+            password: "",
+        }
+
+
+        function textInput({className, name, value, onkeydown}) {
+            let input = document.createElement("input");
+            input.classList.add(className);
+            input.name = name;
+            input.value = value;
+            input.onkeydown = onkeydown;
+
+            // input = {
+            //     ...input,
+            //     className,
+            //     name,
+            //     value,
+            //     onkeydown,
+            // }
+
+            return input;  
+        }
+
+        function usernameTextInput() {
+            let props = {
+                className: "username-input",
+                name: "username",
+                value: inputValues.username,
+                onkeydown: () => {
+                    console.log("키입력");
+                }
+            }
+
+            
+
+            return textInput(props);
+        }
+
+
+        function passwordTextInput() {
+            let props = {
+                className: "password-input",
+                name: "password",
+                value: inputValues.username,
+                onkeydown: () => {
+                    console.log("키입력");
+                }
+            }
+
+            return textInput(props);
+        }
+
+
+
+        function button({className, text, onClick}) {
+            return `<button class="${className}" onClick="${onClick()}">${text}</button>`;
+        }
+
+
+        // 컴포넌트
+        function registerButton() {
+            let props = {
+                className: "registerButton",
+                text: "추가",
+                onClick: () => {},
+            }
+            return button(props);
+        }
+
+
+        function table() {
+            return `
+                <table>
+                    <thead>
+                    </thead>
+                    <tbody>
+                    </tbody>    
+                </table>
+            `;
+        }
+
+        const container = document.querySelector(".container");
+        container.appendChild(usernameTextInput());
+        container.appendChild(passwordTextInput());
+
+        // container.innerHTML = `
+        //     <div>
+        //       ${usernameTextInput()}
+        //       ${passwordTextInput()}
+        //       ${registerButton()}
+        //     </div>
+            
+        // `;
+    </script>
+</body>
+</html>

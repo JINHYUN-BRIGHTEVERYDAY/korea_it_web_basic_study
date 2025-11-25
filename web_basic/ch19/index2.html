@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1, .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(128, 42, 42);
+        }
+
+        /* 두 가지 색상이 교차하여 보여지게끔 */
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(54, 103, 218);
+        }
+
+        .box5 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(54, 218, 73);
+        }
+
+
+        .box6 {
+            width: 100px;
+            height: 100px;
+            background-color: #68288b;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1" id="b1"></div>
+    <div class="box3" id="b1" onclick="console.log('box3 클릭!!')"></div>
+    <div class="box4" id="b4" onclick="changeColor"></div>
+    <div class="box5" id="b5" onclick="changeColor"></div>
+    <div class="box6"></div>
+
+    <script>
+        // 이벤트
+        const box1 = document.querySelector(".box1"); // css 선택자
+        console.log(box1);
+        console.log(box1.id);
+        console.log(box1.onclick);
+
+        // on -> 이벤트 의미
+        const box2 = { // 박스 형태가 객체로 들어간다
+            id: "b2",
+            onclick: () => {}, 
+
+        }
+        box2.backgroundColor = "red"
+        console.log(box2);
+
+        box1.onclick = () => {
+            console.log("클릭!!!");
+        }
+
+
+        // 색이 바뀌도록함
+        const box4 = document.querySelector(".box4");
+        let isRed = true;
+        box4.onclick = () => {
+            // if (isRed) {
+            //     box4.style = `
+            //         background-color: red;
+            //     `;
+            //     isRed = false;
+            // } else {
+            //     box4.style = `
+            //         background-color: blue;
+            //     `;
+            //     isRed = true;
+            // }
+
+            isRed = !isRed;
+            box4.style = `
+                background-color: ${isRed ? "red" : "blue"};
+            `;
+        }
+        
+        // 색이 바뀌도록함
+        const box5 = document.querySelector(".box5");
+            box5.backgroundColor1 = "red";
+            box5.backgroundColor2 = "blue";
+            box5.backgroundColor = box5.backgroundColor1;
+            console.log(box5.backgroundColor1);
+            console.log(box5.backgroundColor2);
+
+
+        box5.onclick = () => {        
+            console.log(box5.backgroundColor);
+            box5.backgroundColor = box5.backgroundColor1 
+                            === box5.backgroundColor1 ? 
+                            box5.backgroundColor2 : box5.backgroundColor1;
+            box5.style = `
+                background-color: ${box5.backgroundColor};
+            `;
+
+
+            // 
+            // let isRed = true;
+            // if (isRed) {
+            //     box4.style = `
+            //         background-color: red;
+            //     `;
+            //     isRed = false;
+            // } else {
+            //     box5.style = `
+            //         background-color: blue;
+            //     `;
+            // }
+            // console.log("블루");
+            // isRed = true;
+        }
+
+        let boxColor = {
+            box6 : {
+                current: "red",
+                color1: "red",
+                color2: "blue",
+            },
+            box7 : {
+                current: "red",
+                color1: "red",
+                color2: "blue",
+            },
+        }
+
+        const box6 = document.querySelector(".box6");
+        
+        function changeBackgroundColor() {
+            box6.style = `
+                background-color: ${boxColor.box6.current};
+            `;
+        }
+
+        changeBackgroundColor();
+        
+        box6.onClick = () => {
+            // 구조분해 - 속성 풀어쓰기
+            const { current, color1, color2 } = boxColor.box6;
+            boxColor.box6.current = current === color1 ? color2 : color1;
+            changeBackgroundColor();
+        }
+        
+    </script>
+</body>
+</html>

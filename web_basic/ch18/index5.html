@@ -9,6 +9,7 @@
     <script>
         // 구조분해 (비구조할당) - 배열
         const arr = [1,2,3,4,5];
+
         const num1 = arr[0];
         const num2 = arr[1];
         const num3 = arr[2];
@@ -23,6 +24,7 @@
 
 
         function getData() {
+
             const student = {
                 name: "김준일",
                 age: 32,
@@ -32,6 +34,7 @@
 
             // 배열에다가 여러 가지 자료 형태 넣을 수 있음
             return [ student, serverPort, status ];
+            
         }
 
         const [ s, sp, st ] = getData();
